@@ -31,6 +31,8 @@ public class Event {
     private String location;
 
     @ElementCollection
+    @CollectionTable(name = "event_participants", joinColumns = @JoinColumn(name = "event_id"))
+    @Column(name = "participant_name")
     private List<String> participants = new ArrayList<>();
 
     public Event() {
