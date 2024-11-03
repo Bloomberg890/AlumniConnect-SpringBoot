@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Connect</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <!-- Popper.js (required for Bootstrap components) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesMessages.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    
+    <div class="content">
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+              <div class="contact">
+                <img src="avatar1.jpg" alt="Amit Kumar">
+                <div class="contact-info">
+                  <h4>Amit Kumar</h4>
+                  <p>Sponsored: Upskill with an...</p>
+                </div>
+                <span class="date">Sep 17</span>
+              </div>
+        
+              <div class="contact">
+                <img src="avatar2.jpg" alt="SANCHITHA V">
+                <div class="contact-info">
+                  <h4>SANCHITHA V</h4>
+                  <p>You're welcome</p>
+                </div>
+                <span class="date">Jun 27</span>
+              </div>
+        
+              <div class="contact">
+                <img src="avatar3.jpg" alt="Priyanka Lingesan">
+                <div class="contact-info">
+                  <h4>Priyanka Lingesan</h4>
+                  <p>😊😊😊</p>
+                </div>
+                <span class="date">May 6</span>
+              </div>
+        
+              <div class="contact">
+                <img src="avatar4.jpg" alt="Sandhya Giribabu">
+                <div class="contact-info">
+                  <h4>Sandhya Giribabu</h4>
+                  <p>Oh, OK</p>
+                </div>
+                <span class="date">Apr 24</span>
+              </div>
+            </div>
+        
+            <!-- Main content -->
+            <div class="main-content">
+              <div class="header">
+                <h3>Amit Kumar</h3>
+                <p>Leading a digital revolution in education</p>
+              </div>
+        
+              <div class="message">
+                <h4>Upskill with an Online MBA for working professionals</h4>
+                <button class="btn">Download Brochure</button>
+              </div>
+        
+              <div class="conversation">
+                <p>Hi Shinigdapriya,</p>
+                <p>How about going a step further and adding a "Manager" to your designation?</p>
+                <ul>
+                  <li>✔️ Online MBA in Logistics & Supply Chain</li>
+                  <li>✔️ Online MBA in Marketing/HR/Finance</li>
+                  <li>🌟 Globally Rated 4 Star</li>
+                  <li>⭐ NAAC A++ Graded</li>
+                  <li>🌟 UGC Entitled, AICTE Recognized</li>
+                </ul>
+                <p>With our online MBA Degree from SRM, you'll be able to better navigate the evolving world of business & drive innovation.</p>
+                <a href="#">Download Brochure ➔</a>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
+    <div id="footer"></div>
+    <script>
+      Promise.all([
+        fetch('/navbar').then(response => response.text()),
+        fetch('/footer').then(response => response.text())
+    ])
+    .then(([navbarData, footerData]) => {
+        console.log(navbarData); // Check if navbar is fetched
+        document.getElementById('navbar').innerHTML = navbarData;
+        document.getElementById('footer').innerHTML = footerData;
+    })
+    .catch(error => console.error('Error fetching HTML:', error));
+
+  </script>
+  
+
+</body>
+</html>

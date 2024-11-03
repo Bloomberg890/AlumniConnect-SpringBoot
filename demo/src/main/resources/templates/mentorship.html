@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Connect</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
+    <!-- Popper.js (required for Bootstrap components) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" placeholder="Search" class="search-bar">
+            <div class="filter-buttons">
+              <button class="filter-btn">Location<img src="images/down.png"></button>
+              <button class="filter-btn">Role<img src="images/down.png"></button>
+              <button class="filter-btn">Company<img src="images/down.png"></button>
+              <button class="filter-btn">Graduation Year<img src="images/down.png"></button>
+              <button class="filter-btn">Job<img src="images/down.png"></button>
+              <button class="filter-btn">Department<img src="images/down.png"></button>
+            </div>
+          </div>
+
+    </div>
+    
+    <div id="footer"></div>
+
+    <script>
+       Promise.all([
+        fetch('/navbar').then(response => response.text()),
+        fetch('/footer').then(response => response.text())
+    ])
+    .then(([navbarData, footerData]) => {
+        console.log(navbarData); // Check if navbar is fetched
+        document.getElementById('navbar').innerHTML = navbarData;
+        document.getElementById('footer').innerHTML = footerData;
+    })
+    .catch(error => console.error('Error fetching HTML:', error));
+
+    </script>
+    
+
+</body>
+</html>
